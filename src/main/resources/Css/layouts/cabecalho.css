@@ -1,0 +1,75 @@
+/* =================================== CABEÇALHO =============================================================================== */
+			/* ==== CABEÇALHO (melhorias visuais) ==== */
+			.cabecalho {
+				-fx-background-color: linear-gradient(to right, #d6a55b, #742c30);
+
+				
+			  }
+			  
+			  .label.titulo-principal {
+				-fx-font-family: "Georgia", serif;
+				-fx-font-size: 22px;
+				-fx-text-fill: #FAF3E0; /* dourado */
+			  }
+
+			.relogio-label {
+				-fx-font-size: 16pt;
+				-fx-text-fill: #FAF3E0;
+				-fx-font-family: "Consolas", "Courier New", monospace;
+				-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0.0, 1, 1);
+			}
+
+			.estacao-label {
+			      -fx-font-size: 12pt;
+				  -fx-text-fill: #FFFFFF;
+				  -fx-font-style: italic;
+				  -fx-font-family: "Georgia", serif;
+			}
+
+			.font-Icon-Relogio {
+			    -fx-icon-size: 20px;
+			    -fx-fill: #FFFFFF;
+			}
+
+
+			/* Nome do usuário */
+			.nome-usuario {
+				-fx-font-size: 16px;
+				-fx-font-weight: bold;
+				-fx-text-fill: #FAF3E0;
+				-fx-padding: 0 10 0 0;
+				-fx-font-family: "Georgia", serif;
+			}
+
+			/* Estilo da imagem do usuário (ImageView) */
+			.image-view {
+			    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 0, 2);
+    			-fx-background-radius: 20px;
+    			-fx-cursor: hand;
+			}
+
+			/* Botão de pesquisa */
+			.botao-pesquisa {
+			    /* Herdar o estilo base dos botões */
+			    -fx-background-color: transparent;
+    			-fx-padding: 5;
+    			-fx-cursor: hand;
+    			-fx-border-color: transparent;
+    			-fx-effect: none;
+
+			    /* Se quiser, ajuste a largura e altura para ficar igual aos outros botões */
+				-fx-min-width: 40px;
+				-fx-min-height: 40px;
+				-fx-alignment: center;
+			}
+
+			.font-Icon {
+				-fx-font-size: 18px; /* Ajuste conforme o tamanho dos seus ícones nos botões */
+			    -fx-fill: #FAF3E0; /* Cor padrão dos ícones */
+			}
+
+			/* Efeito hover no botão */
+			.botao-pesquisa:hover {
+					-fx-background-color: rgba(255, 255, 255, 0.08);
+					-fx-text-fill: #FFD600;
+			}

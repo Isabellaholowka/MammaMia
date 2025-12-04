@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="crud_avaliacao.AvaliacaoCreateController"
+            prefWidth="600" prefHeight="400">
+
+    <VBox spacing="10" alignment="TOP_LEFT" layoutX="20" layoutY="20" prefWidth="560">
+
+        <children>
+
+            <Label text="Cadastro de Avaliação" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+            <HBox spacing="10">
+                <Label text="Cidade:" />
+                <TextField fx:id="txtCidade" promptText="Ex: São Paulo" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Valor Total de Vendas:" />
+                <TextField fx:id="txtValorVendas" promptText="Ex: 5000" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Pratos Mais Pedidos:" />
+                <TextField fx:id="txtPratosPedidos" promptText="Ex: Lasanha, Pizza" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Vendas Totais:" />
+                <TextField fx:id="txtVendasTotais" promptText="Ex: 150" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Desempenho:" />
+                <TextField fx:id="txtDesempenho" promptText="Ex: 85" />
+            </HBox>
+
+            <HBox spacing="15">
+                <Button text="Salvar" onAction="#salvarAvaliacao" styleClass="button02" />
+                <Button text="Limpar" onAction="#limparCampos" styleClass="button02" />
+            </HBox>
+
+        </children>
+
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+        </padding>
+
+    </VBox>
+</AnchorPane>

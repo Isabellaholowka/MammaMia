@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="crud_avaliacao.AvaliacaoListController"
+            prefWidth="800"
+            prefHeight="500"
+            stylesheets="@/globalStyle/style.css">
+
+    <VBox spacing="10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+
+        <children>
+            <Label text="Avaliações" styleClass="titulo-principal"/>
+
+            <TableView fx:id="tableAvaliacoes" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colCidade" text="Cidade" prefWidth="120"/>
+                    <TableColumn fx:id="colValorVendas" text="Valor Total Vendas" prefWidth="120"/>
+                    <TableColumn fx:id="colPratosPedidos" text="Pratos Mais Pedidos" prefWidth="150"/>
+                    <TableColumn fx:id="colVendasTotais" text="Vendas Totais" prefWidth="100"/>
+                    <TableColumn fx:id="colDesempenho" text="Desempenho" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10">
+                <Button text="Cadastrar" onAction="#abrirCadastro" styleClass="button02"/>
+                <Button text="Editar" onAction="#editarCadastro" styleClass="button02"/>
+                <Button text="Excluir" onAction="#excluirCadastro" styleClass="button02"/>
+            </HBox>
+        </children>
+    </VBox>
+</AnchorPane>

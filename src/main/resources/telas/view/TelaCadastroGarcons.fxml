@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="crud_colmeia.GarconsCreateController"
+            prefWidth="600" prefHeight="450"
+            stylesheets="@/globalStyle/style.css">
+
+    <VBox spacing="15" alignment="TOP_LEFT" layoutX="20" layoutY="20" prefWidth="560">
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+
+        <children>
+            <!-- Título da tela -->
+            <Label text="Cadastro de Garçons" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #742c30;" />
+
+            <!-- Formulário em Grid para melhor organização -->
+            <GridPane hgap="15" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="150"/>
+                    <ColumnConstraints prefWidth="300"/>
+                </columnConstraints>
+
+                <!-- Linha 1: Identificação -->
+                <Label text="Identificação:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtNumero" promptText="Ex: Garçon A1" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <!-- Linha 2: Data Cadastro -->
+                <Label text="Data do Cadastro:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-weight: bold;"/>
+                <DatePicker fx:id="dateCadastro" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <!-- Linha 3: Endereço -->
+                <Label text="Endereço:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtEndereco" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <!-- Linha 4: RG -->
+                <Label text="RG:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="comboRG" promptText="Selecione o RG" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <!-- Linha 5: CTPS -->
+                <Label text="Número CTPS:" GridPane.columnIndex="0" GridPane.rowIndex="4" style="-fx-font-weight: bold;"/>
+                <Spinner fx:id="spinnerNumeroCTPS" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <!-- Linha 6: Situação -->
+                <Label text="Situação:" GridPane.columnIndex="0" GridPane.rowIndex="5" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="comboSituacao" promptText="Selecione uma opção" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+            </GridPane>
+
+            <!-- Área para observações -->
+            <VBox spacing="5">
+                <Label text="Observações:" style="-fx-font-weight: bold;"/>
+                <TextArea fx:id="txtObservacoes" prefRowCount="3" promptText="Digite observações sobre o garçom..."/>
+            </VBox>
+
+            <!-- Botões com ícones -->
+            <HBox spacing="15" alignment="CENTER">
+                <!-- Botão Salvar -->
+                <Button onAction="#salvarColmeia" styleClass="button02" style="-fx-padding: 10 20 10 20;">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-save" iconSize="16" iconColor="white"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Salvar cadastro do garçom"/>
+                    </tooltip>
+                </Button>
+                
+                <!-- Botão Limpar -->
+                <Button onAction="#limparCampos" styleClass="button02" style="-fx-padding: 10 20 10 20;">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-eraser" iconSize="16" iconColor="white"/>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Limpar todos os campos"/>
+                    </tooltip>
+                </Button>
+            </HBox>
+        </children>
+    </VBox>
+</AnchorPane>

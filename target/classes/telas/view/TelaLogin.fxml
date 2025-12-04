@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="tela_main_controller.TelaLoginController"
+            style="-fx-background-color: rgba(0, 0, 0, 0.5);"
+            stylesheets="@/globalStyle/style.css"
+            prefWidth="400" prefHeight="500">
+
+    <children>
+        <VBox alignment="CENTER" spacing="0" 
+              AnchorPane.topAnchor="0.0" 
+              AnchorPane.bottomAnchor="0.0" 
+              AnchorPane.leftAnchor="0.0" 
+              AnchorPane.rightAnchor="0.0">
+            
+            <VBox alignment="CENTER" spacing="20" 
+                  style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 5);"
+                  maxWidth="350" minWidth="350">
+
+                <children>
+                    <VBox alignment="CENTER" spacing="10">
+                        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true" smooth="true">
+                            <image>
+                                <Image url="@/imagens/MammaMia.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" spacing="5">
+                            <Label text="Mamma Mia" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #742c30;" />
+                            <Label text="Sistema de Gestão" style="-fx-font-size: 13px; -fx-text-fill: #666;" />
+                        </VBox>
+                    </VBox>
+
+                    <VBox spacing="15" style="-fx-min-width: 280px;">
+                        <VBox spacing="6">
+                            <Label text="Usuário" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" />
+                            <TextField fx:id="txtUsername" promptText="Digite seu usuário" 
+                                     style="-fx-background-color: #ffffff; -fx-border-color: #d6a55b; -fx-border-width: 1.5; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10;" />
+                        </VBox>
+                        
+                        <VBox spacing="6">
+                            <Label text="Senha" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" />
+                            <PasswordField fx:id="txtPassword" promptText="Digite sua senha" 
+                                         style="-fx-background-color: #ffffff; -fx-border-color: #d6a55b; -fx-border-width: 1.5; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10;" />
+                        </VBox>
+                        
+                        <HBox alignment="CENTER_LEFT" spacing="6">
+                            <CheckBox fx:id="checkLembrar" text="Lembrar a senha" />
+                        </HBox>
+                        
+                        <Button fx:id="btnLogin" text="ENTRAR" onAction="#fazerLogin" 
+                                style="-fx-background-color: #B22222; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-pref-height: 40px; -fx-background-radius: 6;"
+                                maxWidth="Infinity" />
+                        
+                        <Label fx:id="lblMensagem" style="-fx-alignment: center; -fx-wrap-text: true; -fx-padding: 8 0 0 0;" />
+                    </VBox>
+
+                    <VBox spacing="8" style="-fx-min-width: 280px;">
+                        <Button text="Login com Google" onAction="#loginGoogle" 
+                                style="-fx-background-color: #B22222; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-height: 35px; -fx-background-radius: 6;"
+                                maxWidth="Infinity">
+                            <graphic>
+                                <FontIcon iconLiteral="fab-google" style="-fx-icon-size: 14px; -fx-fill: white;" />
+                            </graphic>
+                        </Button>
+                        
+                        <Button text="Login RH" onAction="#loginRH" 
+                                style="-fx-background-color: #006400; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-height: 35px; -fx-background-radius: 6;"
+                                maxWidth="Infinity">
+                            <graphic>
+                                <FontIcon iconLiteral="fas-users" style="-fx-icon-size: 14px; -fx-fill: white;" />
+                            </graphic>
+                        </Button>
+
+                        <Button text="Fechar" onAction="#fecharLogin" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #B22222; -fx-border-color: #B22222; -fx-border-width: 2; -fx-border-radius: 6; -fx-pref-height: 35px;"
+                                maxWidth="Infinity" />
+                    </VBox>
+                </children>
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

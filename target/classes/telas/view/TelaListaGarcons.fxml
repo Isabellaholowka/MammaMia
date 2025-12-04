@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="crud_colmeia.GarconsListController"
+            prefWidth="900"
+            prefHeight="600"
+            stylesheets="@/globalStyle/style.css">
+
+    <VBox spacing="15" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <!-- CABEÇALHO -->
+        <VBox spacing="8" style="-fx-border-color: #d6a55b; -fx-border-width: 0 0 2 0; -fx-padding: 0 0 15 0;">
+            <Label text="Cadastro de Garçons" 
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #742c30; -fx-font-family: 'Georgia', serif;"/>
+            <Label text="Clique em um garçon na tabela para ver as informações completas" 
+                   style="-fx-font-size: 14px; -fx-text-fill: #666;"/>
+        </VBox>
+
+        <!-- BARRA DE PESQUISA COM LUPA -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <TextField fx:id="txtPesquisa" promptText="Pesquisar por ID ou Nome..." 
+                       style="-fx-pref-width: 300;"/>
+            <Button onAction="#pesquisarGarcon" styleClass="button02" style="-fx-padding: 8 12 8 12;">
+                <graphic>
+                    <FontIcon iconLiteral="fas-search" iconSize="16" iconColor="white"/>
+                </graphic>
+            </Button>
+        </HBox>
+
+        <!-- CONTEÚDO PRINCIPAL - LADO A LADO -->
+        <HBox spacing="20" VBox.vgrow="ALWAYS">
+            <!-- COLUNA DA ESQUERDA - TABELA E BOTÕES -->
+            <VBox spacing="15" prefWidth="400">
+                <!-- TABELA REDUZIDA -->
+                <TableView fx:id="tableGarcons" prefHeight="250">
+                    <columns>
+                        <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+                        <TableColumn fx:id="colIdentificacao" text="Nome" prefWidth="300"/>
+                    </columns>
+                </TableView>
+
+                <!-- BOTÕES COM ÍCONES -->
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <!-- BOTÃO CADASTRAR -->
+                    <Button onAction="#abrirCadastro" styleClass="button02" style="-fx-padding: 10 15 10 15;">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-user-plus" iconSize="16" iconColor="white"/>
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Cadastrar novo garçom"/>
+                        </tooltip>
+                    </Button>
+                    
+                    <!-- BOTÃO EDITAR (APENAS ÍCONE) -->
+                    <Button onAction="#editarCadastro" styleClass="button02">
+                        <graphic>
+                             <FontIcon iconLiteral="fas-edit" iconSize="16" iconColor="white"/>
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Editar garçom selecionado"/>
+                        </tooltip>
+                    </Button>
+                    
+                    <!-- BOTÃO EXCLUIR -->
+                    <Button onAction="#excluirCadastro" styleClass="button02" style="-fx-padding: 10 15 10 15;">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-trash-alt" iconSize="16" iconColor="white"/>
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Excluir garçom selecionado"/>
+                        </tooltip>
+                    </Button>
+                </HBox>
+            </VBox>
+
+            <!-- COLUNA DA DIREITA - DETALHES DO GARÇOM -->
+            <VBox fx:id="boxDetalhes" spacing="10" 
+                  style="-fx-background-color: #f8f9fa; -fx-border-color: #d6a55b; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 12;"
+                  visible="false"
+                  prefWidth="400"
+                  prefHeight="150">
+                
+                <Label text="Informações do Garçom" 
+                       style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #742c30; -fx-padding: 0 0 5 0;"/>
+                
+                <GridPane hgap="10" vgap="8">
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="100"/>
+                        <ColumnConstraints prefWidth="180"/>
+                    </columnConstraints>
+                    
+                    <children>
+                        <!-- Coluna 1 -->
+                        <Label text="Endereço:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblDetalheEndereco" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" wrapText="true" maxWidth="180"/>
+                        
+                        <Label text="RG:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblDetalheRG" text="" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        
+                        <Label text="Situação:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblDetalheSituacao" text="" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        
+                        <!-- Coluna 2 -->
+                        <Label text="Data Cadastro:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblDetalheDataCadastro" text="" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        
+                        <Label text="CTPS:" GridPane.columnIndex="0" GridPane.rowIndex="4" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblDetalheCTPS" text="" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                        
+                        <Label text="Observações:" GridPane.columnIndex="0" GridPane.rowIndex="5" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblDetalheObservacoes" text="" GridPane.columnIndex="1" GridPane.rowIndex="5" wrapText="true" maxWidth="180" prefHeight="40"/>
+                    </children>
+                </GridPane>
+            </VBox>
+        </HBox>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,33 @@
+/* ========================================== TABELAS ========================================== */
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: -cor-borda;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.table-view .column-header {
+    -fx-background-color: -cor-primaria;
+    -fx-text-fill: -cor-texto-branco;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-border-color: transparent;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #F8F9FA;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #FFFFFF;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: rgba(178, 34, 34, 0.1); /* Vermelho vinho translúcido */
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: rgba(178, 34, 34, 0.2);
+}

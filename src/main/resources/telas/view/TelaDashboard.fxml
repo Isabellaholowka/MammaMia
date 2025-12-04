@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="tela_main_controller.TelaDashboardController"
+            stylesheets="@/globalStyle/style.css">
+
+    <VBox spacing="0" style="-fx-background-color: #FAF3E0;" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <!-- CABEÇALHO FIXO -->
+        <VBox spacing="8" style="-fx-background-color: #FAF3E0; -fx-border-color: #d6a55b; -fx-border-width: 0 0 2 0; -fx-padding: 15 20 15 20;">
+            <Label text="📊 Dashboard MammaMia"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #742c30; -fx-font-family: 'Georgia', serif;"/>
+            <Label text="Visão geral em tempo real - Dados atualizados automaticamente"
+                   style="-fx-font-size: 14px; -fx-text-fill: #666;"/>
+        </VBox>
+
+        <!-- CONTEÚDO PRINCIPAL COM SCROLL -->
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background: #FAF3E0; -fx-border-color: transparent;">
+            <VBox spacing="20" style="-fx-padding: 20; -fx-background-color: #FAF3E0;">
+
+                <!-- PRIMEIRA LINHA - KPI CARDS (4 COLUNAS) -->
+                <GridPane hgap="15" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                    </columnConstraints>
+
+                    <!-- FATURAMENTO -->
+                    <VBox style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"
+                          GridPane.columnIndex="0">
+                        <Label text="💰" style="-fx-font-size: 24px;"/>
+                        <Label text="R$ 12.847" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"/>
+                        <Label text="Faturamento" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                        <Label text="+15% vs mês anterior" style="-fx-font-size: 10px; -fx-text-fill: #27ae60; -fx-padding: 5 0 0 0;"/>
+                    </VBox>
+
+                    <!-- CLIENTES -->
+                    <VBox style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"
+                          GridPane.columnIndex="1">
+                        <Label text="👥" style="-fx-font-size: 24px;"/>
+                        <Label text="284" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #742c30;"/>
+                        <Label text="Clientes" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                        <Label text="+32 este mês" style="-fx-font-size: 10px; -fx-text-fill: #27ae60; -fx-padding: 5 0 0 0;"/>
+                    </VBox>
+
+                    <!-- PEDIDOS -->
+                    <VBox style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"
+                          GridPane.columnIndex="2">
+                        <Label text="🍽️" style="-fx-font-size: 24px;"/>
+                        <Label text="156" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #742c30;"/>
+                        <Label text="Pedidos Hoje" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                        <Label text="Média: 140/dia" style="-fx-font-size: 10px; -fx-text-fill: #666; -fx-padding: 5 0 0 0;"/>
+                    </VBox>
+
+                    <!-- AVALIAÇÕES -->
+                    <VBox style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"
+                          GridPane.columnIndex="3">
+                        <Label text="⭐" style="-fx-font-size: 24px;"/>
+                        <Label text="4.7/5.0" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #f39c12;"/>
+                        <Label text="Avaliações" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                        <Label text="+48 avaliações" style="-fx-font-size: 10px; -fx-text-fill: #666; -fx-padding: 5 0 0 0;"/>
+                    </VBox>
+                </GridPane>
+
+                <!-- SEGUNDA LINHA - 2 COLUNAS PRINCIPAIS -->
+                <HBox spacing="15" VBox.vgrow="ALWAYS">
+                    <!-- COLUNA ESQUERDA -->
+                    <VBox spacing="15" HBox.hgrow="ALWAYS" prefWidth="500">
+                        <!-- GRÁFICO DE PIZZA - TIPO DE PEDIDOS -->
+                        <VBox style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"
+                              VBox.vgrow="ALWAYS">
+                            <Label text="📈 Tipo de Pedidos" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #742c30; -fx-padding: 0 0 10 0;"/>
+                            <PieChart fx:id="pieChartTipoPedidos" prefHeight="250"/>
+                        </VBox>
+
+                        <!-- PRATOS MAIS VENDIDOS -->
+                        <VBox style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"
+                              VBox.vgrow="ALWAYS">
+                            <Label text="🍝 Pratos Mais Vendidos" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #742c30; -fx-padding: 0 0 10 0;"/>
+                            
+                            <VBox spacing="10">
+                                <!-- PRATO 1 -->
+                                <HBox spacing="10" alignment="CENTER_LEFT">
+                                    <Label text="🥇" style="-fx-font-size: 20px;"/>
+                                    <VBox>
+                                        <Label text="Pizza Marguerita" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #742c30;"/>
+                                        <Label text="128 vendas • R$ 3.840" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                                    </VBox>
+                                </HBox>
+                                
+                                <!-- PRATO 2 -->
+                                <HBox spacing="10" alignment="CENTER_LEFT">
+                                    <Label text="🥈" style="-fx-font-size: 18px;"/>
+                                    <VBox>
+                                        <Label text="Lasanha Bolonhesa" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #742c30;"/>
+                                        <Label text="95 vendas • R$ 4.275" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                                    </VBox>
+                                </HBox>
+                                
+                                <!-- PRATO 3 -->
+                                <HBox spacing="10" alignment="CENTER_LEFT">
+                                    <Label text="🥉" style="-fx-font-size: 16px;"/>
+                                    <VBox>
+                                        <Label text="Risotto de Funghi" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #742c30;"/>
+                                        <Label text="76 vendas • R$ 3.800" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                                    </VBox>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+
+                    <!-- COLUNA DIREITA -->
+                    <VBox spacing="15" HBox.hgrow="ALWAYS" prefWidth="500">
+                        <!-- GRÁFICO DE BARRAS - VENDAS POR DIA -->
+                        <VBox style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"
+                              VBox.vgrow="ALWAYS">
+                            <Label text="📊 Vendas da Semana" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #742c30; -fx-padding: 0 0 10 0;"/>
+                            <BarChart fx:id="barChartVendasSemana" prefHeight="300">
+                                <xAxis>
+                                    <CategoryAxis label="Dias" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="Vendas (R$)" />
+                                </yAxis>
+                            </BarChart>
+                        </VBox>
+
+                        <!-- MÉTRICAS ADICIONAIS -->
+                        <GridPane hgap="10" vgap="10">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="50"/>
+                                <ColumnConstraints percentWidth="50"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints percentHeight="50"/>
+                                <RowConstraints percentHeight="50"/>
+                            </rowConstraints>
+
+                            <!-- ESTOQUE -->
+                            <VBox style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"
+                                  GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <Label text="📦 Estoque" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #742c30;"/>
+                                <Label text="87%" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #27ae60; -fx-padding: 5 0 0 0;"/>
+                                <Label text="12 itens baixos" style="-fx-font-size: 11px; -fx-text-fill: #e74c3c;"/>
+                            </VBox>
+
+                            <!-- MESAS -->
+                            <VBox style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                <Label text="🪑 Mesas" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #742c30;"/>
+                                <Label text="24/30" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #742c30; -fx-padding: 5 0 0 0;"/>
+                                <Label text="80% ocupação" style="-fx-font-size: 11px; -fx-text-fill: #666;"/>
+                            </VBox>
+
+                            <!-- DELIVERY -->
+                            <VBox style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"
+                                  GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <Label text="🚚 Delivery" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #742c30;"/>
+                                <Label text="42 pedidos" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #742c30; -fx-padding: 5 0 0 0;"/>
+                                <Label text="+23% vs anterior" style="-fx-font-size: 11px; -fx-text-fill: #27ae60;"/>
+                            </VBox>
+
+                            <!-- TEMPO MÉDIO -->
+                            <VBox style="-fx-background-color: white; -fx-border-color: #d6a55b; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <Label text="⏱️ Tempo Médio" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #742c30;"/>
+                                <Label text="28 min" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #742c30; -fx-padding: 5 0 0 0;"/>
+                                <Label text="Preparo + Entrega" style="-fx-font-size: 11px; -fx-text-fill: #666;"/>
+                            </VBox>
+                        </GridPane>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </VBox>
+</AnchorPane>

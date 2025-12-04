@@ -1,0 +1,55 @@
+/* ========================================== BOTÕES ADICIONAIS ========================================== */
+.btn-primary {
+  -fx-background-color: -cor-primaria;   /* Vermelho vinho */
+  -fx-text-fill: -cor-texto-branco;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 6;
+  -fx-padding: 8 16;
+  -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+  -fx-background-color: #8B1A1A;  /* Vermelho mais escuro */
+}
+
+.btn-success {
+  -fx-background-color: -cor-secundaria; /* Verde escuro */
+  -fx-text-fill: -cor-texto-branco;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 6;
+  -fx-padding: 8 16;
+  -fx-cursor: hand;
+}
+
+.btn-success:hover {
+  -fx-background-color: #004D00;  /* Verde mais escuro */
+}
+
+.btn-outline {
+  -fx-background-color: transparent;
+  -fx-text-fill: -cor-primaria;
+  -fx-border-color: -cor-primaria;
+  -fx-border-width: 2px;
+  -fx-border-radius: 6;
+  -fx-background-radius: 6;
+  -fx-padding: 6 14;
+  -fx-cursor: hand;
+}
+
+.btn-outline:hover {
+  -fx-background-color: -cor-primaria;
+  -fx-text-fill: -cor-texto-branco;
+}
+
+/* Tamanhos de botão */
+.btn-sm {
+  -fx-padding: 4 12;
+  -fx-font-size: 12px;
+}
+
+.btn-lg {
+  -fx-padding: 12 24;
+  -fx-font-size: 16px;
+}

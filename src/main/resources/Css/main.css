@@ -1,0 +1,54 @@
+/* ========================================== LAYOUT PRINCIPAL ========================================== */
+.container {
+    -fx-max-width: 1200px;
+    -fx-margin: 0 auto;
+    -fx-padding: 20px;
+}
+
+.container-fluid {
+    -fx-width: 100%;
+    -fx-padding: 20px;
+}
+
+.main-content {
+    -fx-min-height: calc(100vh - 120px);
+    -fx-padding: 20px 0;
+}
+
+.section {
+    -fx-background-color: #FFFFFF;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+    -fx-margin-bottom: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+.grid {
+    -fx-display: grid;
+    -fx-gap: 20px;
+}
+
+.grid-2 {
+    -fx-grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    -fx-grid-template-columns: repeat(3, 1fr);
+}
+
+.flex {
+    -fx-display: flex;
+}
+
+.flex-center {
+    -fx-display: flex;
+    -fx-justify-content: center;
+    -fx-align-items: center;
+}
+
+.flex-between {
+    -fx-display: flex;
+    -fx-justify-content: space-between;
+    -fx-align-items: center;
+}

@@ -1,0 +1,28 @@
+/* ========================================== VARIÁVEIS DO TEMA RÚSTICO ========================================== */
+.root {
+  /* Cores principais baseadas no seu tema */
+  -cor-primaria: #B22222;           /* Vermelho vinho */
+  -cor-secundaria: #006400;         /* Verde escuro */
+  -cor-dourado: #FFD700;            /* Dourado */
+  -cor-dourado-claro: #FFD600;      /* Dourado claro */
+  -cor-bege: #FAF3E0;               /* Bege de fundo */
+  -cor-marrom-claro: #d6a55b;       /* Marrom claro do gradiente */
+  -cor-marrom-escuro: #742c30;      /* Marrom escuro do gradiente */
+  
+  /* Cores de texto */
+  -cor-texto-branco: #FFFFFF;
+  -cor-texto-dourado: #FAF3E0;
+  -cor-texto-escuro: #2c3e50;
+  
+  /* Cores de borda */
+  -cor-borda: #CCCCCC;
+  -cor-borda-foco: #B22222;
+  
+  /* Gradientes */
+  -gradiente-cabecalho: linear-gradient(to right, #d6a55b, #742c30);
+  -gradiente-menu: linear-gradient(to bottom, #d6a55b, #742c30);
+  
+  /* Efeitos */
+  -sombra-leve: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+  -sombra-media: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0.0, 1, 1);
+}

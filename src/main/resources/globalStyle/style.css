@@ -1,0 +1,184 @@
+
+
+
+
+/* ========================================== FUNDO GLOBAL ================================================================================== */
+/* .root: estilos aplicados a todo o aplicativo */
+.root {
+  -fx-font-family: "Georgia", serif;       /* define a família de fontes padrão      ou   -fx-font-family: "Segoe UI", sans-serif;*/
+  -fx-background-color: #FAF3E0;                /* (fundo bege rústico) é excelente para fundo de tela background */
+}
+
+
+/* =================================== MENU LATERAL ================================================================================== */
+/* .area-padrao: container do menu lateral */
+.area-padrao {
+  -fx-background-color: linear-gradient(to bottom, #d6a55b, #742c30); 			/* vermelho → verde */
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+  -fx-border-color: transparent;   													 /* Sem borda visível */
+  -fx-border-width: 0;            													 /* Largura da borda zero */
+  -fx-border-radius: 0px;                       									 /* cantos retos (sem arredondamento) */
+  -fx-background-radius: 0px;                     									 /* cantos retos no fundo */
+  -fx-padding: 0 10 10 10;												            /* top right bottom left */
+  -fx-pref-height: Infinity;                    								     /* ocupa toda a altura disponível */
+}
+
+
+
+/* =================================== CABEÇALHO =============================================================================== */
+			/* ==== CABEÇALHO (melhorias visuais) ==== */
+			.cabecalho {
+				-fx-background-color: linear-gradient(to right, #d6a55b, #742c30);
+
+				
+			  }
+			  
+			  .label.titulo-principal {
+				-fx-font-family: "Georgia", serif;
+				-fx-font-size: 22px;
+				-fx-text-fill: #FAF3E0; /* dourado */
+			  }
+
+			.relogio-label {
+				-fx-font-size: 16pt;
+				-fx-text-fill: #FAF3E0;
+				-fx-font-family: "Consolas", "Courier New", monospace;
+				-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0.0, 1, 1);
+			}
+
+			.estacao-label {
+			      -fx-font-size: 12pt;
+				  -fx-text-fill: #FFFFFF;
+				  -fx-font-style: italic;
+				  -fx-font-family: "Georgia", serif;
+			}
+
+			.font-Icon-Relogio {
+			    -fx-icon-size: 20px;
+			    -fx-fill: #FFFFFF;
+			}
+
+
+			/* Nome do usuário */
+			.nome-usuario {
+				-fx-font-size: 16px;
+				-fx-font-weight: bold;
+				-fx-text-fill: #FAF3E0;
+				-fx-padding: 0 10 0 0;
+				-fx-font-family: "Georgia", serif;
+			}
+
+			/* Estilo da imagem do usuário (ImageView) */
+			.image-view {
+			    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 0, 2);
+    			-fx-background-radius: 20px;
+    			-fx-cursor: hand;
+			}
+
+			/* Botão de pesquisa */
+			.botao-pesquisa {
+			    /* Herdar o estilo base dos botões */
+			    -fx-background-color: transparent;
+    			-fx-padding: 5;
+    			-fx-cursor: hand;
+    			-fx-border-color: transparent;
+    			-fx-effect: none;
+
+			    /* Se quiser, ajuste a largura e altura para ficar igual aos outros botões */
+				-fx-min-width: 40px;
+				-fx-min-height: 40px;
+				-fx-alignment: center;
+			}
+
+			.font-Icon {
+				-fx-font-size: 18px; /* Ajuste conforme o tamanho dos seus ícones nos botões */
+			    -fx-fill: #FAF3E0; /* Cor padrão dos ícones */
+			}
+
+			/* Efeito hover no botão */
+			.botao-pesquisa:hover {
+					-fx-background-color: rgba(255, 255, 255, 0.08);
+					-fx-text-fill: #FFD600;
+			}
+
+
+
+/* ======================================== Campos de texto ======================================================================== */
+.text-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 6;
+}
+.text-field:focused {
+	-fx-border-color: #B22222; /* vermelho vinho */
+}
+
+
+/* ========================================== BOTÕES ================================================================================  */
+/* .button: estilo base para botões  aparência padrão dos botões DO MENU  */
+.button {
+
+	    -fx-background-color: transparent;
+		-fx-text-fill: #FAF3E0;
+	    -fx-font-size: 14px;
+	    -fx-font-weight: normal;
+	    -fx-alignment: CENTER_LEFT;
+	    -fx-padding: 8 16 8 12;
+  		-fx-cursor: hand;                                 /* cursor “mãozinha” no hover */
+  		-fx-graphic-text-gap: 12px; 					  /* espaço maior entre ícone e texto */
+}
+
+
+/* .button:hover: estado ao passar o mouse */
+.button:hover {
+	-fx-background-color: rgba(255, 215, 0, 0.2); /* dourado translúcido */
+    -fx-text-fill: #FFD700;                       /* dourado */
+  }
+
+
+.font-Icon {
+    -fx-icon-size: 18px;
+    -fx-fill: #FFFFFF;
+}
+
+/* Ícone quando o botão está com hover */
+.button:hover {
+    -fx-background-color: rgba(255, 215, 0, 0.2); /* dourado translúcido */
+    -fx-text-fill: #FFD700;                       /* dourado */
+}
+
+.button:hover .font-Icon {
+    -fx-fill: #FFD700;
+}
+
+
+/* .button: estilo base para botões  aparência padrão dos botões DO BODY */
+.button02 {
+    /* Mantém as cores originais */
+    -fx-background-color: #B22222;
+    -fx-text-fill: #FFFFFF;
+    
+    /* MODIFICA estas para mostrar só ícone */
+    -fx-padding: 10 10;              /* Reduz padding para quadrado menor */
+    -fx-min-width: 40px;             /* Largura mínima igual à altura */
+    -fx-min-height: 40px;            /* Altura mínima igual à largura */
+    -fx-max-width: 40px;             /* Largura máxima fixa */
+    -fx-max-height: 40px;            /* Altura máxima fixa */
+    
+    /* Mantém o resto */
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.button02:hover {
+    -fx-background-color: #006400;  /* verde escuro */
+}
+.button02 {
+    /* ... suas propriedades atuais ... */
+    
+    /* CENTRALIZA O ÍCONE */
+    -fx-alignment: CENTER;           /* Centraliza o conteúdo */
+    -fx-content-display: GRAPHIC_ONLY; /* Mostra apenas o gráfico/ícone */
+}
+

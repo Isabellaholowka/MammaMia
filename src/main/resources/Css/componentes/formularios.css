@@ -1,0 +1,47 @@
+/* ========================================== FORMULÁRIOS AVANÇADOS ========================================== */
+.form-group {
+    -fx-margin-bottom: 20px;
+}
+
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: -cor-texto-escuro;
+    -fx-margin-bottom: 8px;
+}
+
+.form-control {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: -cor-borda;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 8;
+}
+
+.form-control:focused {
+    -fx-border-color: -cor-borda-foco; /* Vermelho vinho */
+}
+
+/* Textarea */
+.text-area {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: -cor-borda;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 8;
+}
+
+.text-area:focused {
+    -fx-border-color: -cor-borda-foco;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: -cor-borda;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.combo-box:focused {
+    -fx-border-color: -cor-borda-foco;
+}
